@@ -1,5 +1,9 @@
 .productList {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 20vw);
+  grid-template-rows: repeat(2, 32vh);
+}
 
-  justify-content: start;
+ul > li {
+  list-style: none;
 }

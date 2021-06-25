@@ -26,9 +26,11 @@ const fetch_mini = async () => {
         await eh
       ).$eval("img", (el) => {
         return (
-          "www.ministop.co.kr/MiniStopHomePage/page" +
+          "http://www.ministop.co.kr/MiniStopHomePage/page" +
           el.getAttribute("src").replace("..", "")
         );
+        // www.ministop.co.kr/MiniStopHomePage/page/pic.do?n=event1plus1.[7RP9JTHA_]1plus1_208.jpg
+        // www.ministop.co.kr/MiniStopHomePage/page/pic.do?n=event1plus1.[FDJ6JTHA_]1plus1_205.jpg
       }),
       etc: await (
         await eh

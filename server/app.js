@@ -1,8 +1,10 @@
 var createError = require("http-errors");
 var express = require("express");
-var path = require("path");
+
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var cors = require("cors");
+
 const cu = require("./fetch/fetch_cu");
 const gs = require("./fetch/fetch_gs");
 const mini = require("./fetch/fetch_mini");
@@ -15,20 +17,40 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", async (req, res) => {
+app.use(cors());
+app.use("/cu", async (req, res) => {
   const cu_prod = await cu.fetch_cu();
+  const prodList = {
+    prod: cu_prod,
+  };
+  res.json(prodList);
+});
+app.use("/gs", async (req, res) => {
   const gs_prod = await gs.fetch_gs();
+  const prodList = {
+    prod: gs_prod,
+  };
+  res.json(prodList);
+});
+app.use("/mini", async (req, res) => {
   const mini_prod = await mini.fetch_mini();
+  const prodList = {
+    prod: mini_prod,
+  };
+  res.json(prodList);
+});
+app.use("/emart", async (req, res) => {
   const emart_prod = await emart.fetch_emart();
+  const prodList = {
+    prod: emart_prod,
+  };
+  res.json(prodList);
+});
+app.use("/seven", async (req, res) => {
   const seven_prod = await seven.fetch_seven();
   const prodList = {
-    cu: cu_prod,
-    gs: gs_prod,
-    mini: mini_prod,
-    emart: emart_prod,
-    seven: seven_prod,
+    prod: seven_prod,
   };
   res.json(prodList);
 });
