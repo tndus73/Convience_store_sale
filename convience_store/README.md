@@ -1,8 +1,3 @@
-# 210629
-
-- pagination Component만들기
-- pagination Component 생각해서 백엔드와 연동
-
 # 210625
 
 - CORS문제가 생김.
