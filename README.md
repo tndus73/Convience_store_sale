@@ -2,6 +2,8 @@
 
 - pagination Component만들기
 - pagination Component 생각해서 백엔드와 연동
+- Pagination: frontend에서 현재의 위치(offset)와 보여줄 컨텐츠 수(limit)를 백엔드에 전달.
+- 백엔드에서는 이에 해당하는 데이터를 끊어 보내줌.
 
 # 210625
 
