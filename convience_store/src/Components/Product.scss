@@ -1,11 +1,36 @@
 .product {
   border: 1px solid black;
-  width: 180px;
-  height: 270px;
-  overflow-x: hidden;
+  border-radius: 8px;
+  width: 300px;
+  height: 80px;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.prod_img > img {
-  width: 180px;
-  height: 200px;
+.product_img > img {
+  width: 4vw;
+  height: 8vh;
+}
+
+.content > p {
+  padding-bottom: 3px;
+}
+
+.product_price {
+  display: flex;
+  align-items: center;
+}
+
+.won {
+  color: gold;
+}
+
+.product_etc {
+  border: 1px solid black;
+  border-radius: 8px;
+  display: inline;
+  background-color: violet;
+  color: white;
+  margin: auto;
 }
