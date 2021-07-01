@@ -3,6 +3,9 @@
 - pagination을 query string이 아닌 frontend에서 결정
 - pagination이 product위에 있는 문제점 발견.
   ![image](https://user-images.githubusercontent.com/57670160/124065007-dc2c1180-da70-11eb-9b2f-c2b7727630ab.png)
+- pagination이 product위에 있는 문제점 해결 - grid-template-rows의 repeat를 3으로 설정
+  ![image](https://user-images.githubusercontent.com/57670160/124066932-780b4c80-da74-11eb-8cfb-bbbc7a794097.png)
+- 해야할 일: puppeteer로 Pagination들 스크래핑하기
 
 # 210629
 

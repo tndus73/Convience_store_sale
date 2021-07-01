@@ -48,7 +48,7 @@ const ProductList = ({ comp }) => {
           <ProductPage currProductList={currProductList(products)} />
         </div>
       </div>
-      <div>
+      <div className="paging">
         <Pagination
           maxProductList={maxProductList}
           totalProduct={products.length}
