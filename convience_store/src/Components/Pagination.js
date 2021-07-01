@@ -7,13 +7,9 @@ const Pagination = ({ maxProductList, totalProduct, setCurrPage }) => {
   }
   return (
     <div className="pagination">
-      <ul>
+      <ul onClick={(e) => setCurrPage(e.target.closest("li").innerText)}>
         {pageNumber.map((page) => {
-          return (
-            <li key={page} onClick={() => setCurrPage(page)}>
-              {page}
-            </li>
-          );
+          return <li key={page}>{page}</li>;
         })}
       </ul>
     </div>

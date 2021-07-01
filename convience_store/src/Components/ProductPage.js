@@ -5,7 +5,7 @@ const ProductPage = ({ currProductList }) => {
   return (
     <div className="productPage">
       {currProductList.map((product) => (
-        <Product product={product} />
+        <Product product={product} key={product.idx} />
       ))}
     </div>
   );
