@@ -6,6 +6,7 @@
 - pagination이 product위에 있는 문제점 해결 - grid-template-rows의 repeat를 3으로 설정
   ![image](https://user-images.githubusercontent.com/57670160/124066932-780b4c80-da74-11eb-8cfb-bbbc7a794097.png)
 - 해야할 일: puppeteer로 Pagination들 스크래핑하기
+- 이벤트 위임 방식을 사용해서 페이지네이션 구현(이벤트 위임: 이벤트 리스터를 하위 요소에 추가하는 대신 상위 요소에 추가하여 하위 요소의 이벤트를 제어하는 기법)
 
 # 210629
 
