@@ -1,11 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Product from "./Product";
+import Pagination from "./Pagination";
 import "./ProductList.scss";
+import ProductPage from "./ProductPage";
 
 const ProductList = ({ comp }) => {
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // pagination 관련
+  const [currPage, setCurrPage] = useState(1);
+  const maxProductList = 15;
+
+  const indexOfLast = currPage * maxProductList;
+  const indexOfFirst = indexOfLast - maxProductList;
+  const currProductList = (temp) => {
+    const currProduct = temp.slice(indexOfFirst, indexOfLast);
+    return currProduct;
+  };
 
   useEffect(() => {
     const fetchProd = async () => {
@@ -30,13 +42,20 @@ const ProductList = ({ comp }) => {
   }
 
   return (
-    <ul className="productList">
-      {products.map((product) => (
-        <li>
-          <Product product={product} key={product.img} />
-        </li>
-      ))}
-    </ul>
+    <div>
+      <div>
+        <div className="productList">
+          <ProductPage currProductList={currProductList(products)} />
+        </div>
+      </div>
+      <div>
+        <Pagination
+          maxProductList={maxProductList}
+          totalProduct={products.length}
+          setCurrPage={setCurrPage}
+        />
+      </div>
+    </div>
   );
 };
 

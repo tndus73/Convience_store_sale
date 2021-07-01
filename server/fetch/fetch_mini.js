@@ -10,8 +10,10 @@ const fetch_mini = async () => {
   const ehList = await page.$$(".event_plus_list > ul > li > a");
 
   const prodList = [];
+  let idx = 0;
   for (let eh of ehList) {
     prodList.push({
+      idx: idx,
       name: await (
         await eh
       ).$eval("img", (el) => {
@@ -38,6 +40,7 @@ const fetch_mini = async () => {
         return el.innerText;
       }),
     });
+    idx++;
   }
   await page.close();
   await browser.close();

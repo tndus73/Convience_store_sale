@@ -1,3 +1,9 @@
+# 210701
+
+- pagination을 query string이 아닌 frontend에서 결정
+- pagination이 product위에 있는 문제점 발견.
+  ![image](https://user-images.githubusercontent.com/57670160/124065007-dc2c1180-da70-11eb-9b2f-c2b7727630ab.png)
+
 # 210629
 
 - pagination Component만들기

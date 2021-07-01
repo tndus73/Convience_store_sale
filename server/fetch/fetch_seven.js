@@ -9,8 +9,10 @@ const fetch_seven = async () => {
   const oneplus = await page.$("ul#listUl > li");
 
   const prodList = [];
+  let idx = 0;
   for (let eh of ehList) {
     prodList.push({
+      idx: idx,
       name: await (
         await eh
       ).$eval(".infowrap > .name", (el) => {
@@ -28,6 +30,7 @@ const fetch_seven = async () => {
       }),
       etc: await oneplus.$eval("span", (el) => el.innerText),
     });
+    idx++;
   }
   await page.close();
   await browser.close();

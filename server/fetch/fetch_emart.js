@@ -8,8 +8,10 @@ const fetch_emart = async () => {
   const ehList = await page.$$("ul.categoryListNew > li");
 
   const prodList = [];
+  let idx = 0;
   for (let eh of ehList) {
     prodList.push({
+      idx: idx,
       name: await (
         await eh
       ).$eval(".box > .productDiv", (el) => {
@@ -31,6 +33,7 @@ const fetch_emart = async () => {
         return el.getAttribute("alt").replace(/ /g, "").substr(0, 3);
       }),
     });
+    idx++;
   }
   await page.close();
   await browser.close();

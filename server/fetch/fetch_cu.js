@@ -10,8 +10,10 @@ const fetch_cu = async () => {
   const ehList = await page.$$("div.prodListWrap > ul > li");
 
   const prodList = [];
+  let idx = 0;
   for (let eh of ehList) {
     prodList.push({
+      idx: idx,
       name: await (
         await eh
       ).$eval("p.prodName > a", (el) => {
@@ -33,6 +35,7 @@ const fetch_cu = async () => {
         return el.innerText;
       }),
     });
+    idx++;
   }
   await page.close();
   await browser.close();

@@ -8,8 +8,10 @@ const fetch_gs = async () => {
   const ehList = await page.$$("ul.prod_list > li > .prod_box");
 
   const prodList = [];
+  let idx = 0;
   for (let eh of ehList) {
     prodList.push({
+      idx: idx,
       name: await (
         await eh
       ).$eval("p.tit", (el) => {
@@ -31,6 +33,7 @@ const fetch_gs = async () => {
         return el.innerText;
       }),
     });
+    idx++;
   }
   await page.close();
   await browser.close();

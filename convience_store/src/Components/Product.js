@@ -1,7 +1,10 @@
 import "./Product.scss";
 
 const Product = ({ product }) => {
-  const { name, price, img, etc } = product;
+  const { idx, name, price, img, etc } = product;
+  if (idx === 1) {
+    console.log(idx);
+  }
   return (
     <div className="product">
       {img && (
