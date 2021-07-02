@@ -1,3 +1,9 @@
+# 210702
+
+![image](https://user-images.githubusercontent.com/57670160/124252618-19240100-db62-11eb-99aa-0612f796e904.png)
+
+- 해야할 일: Puppeteer로 페이지가 이동될 때 새로운 데이터 가져오기
+
 # 210701
 
 - pagination을 query string이 아닌 frontend에서 결정

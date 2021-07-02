@@ -6,9 +6,9 @@ const fetch_cu = async () => {
   await page.goto(
     "http://cu.bgfretail.com/event/plus.do?category=event&depth2=1&sf=N"
   );
+
   await page.waitForSelector("div.prodListWrap > ul > li");
   const ehList = await page.$$("div.prodListWrap > ul > li");
-
   const prodList = [];
   let idx = 0;
   for (let eh of ehList) {
